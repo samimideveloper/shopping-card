@@ -1,5 +1,14 @@
+import Layout from "../../../Layout";
+import { Navigation } from "../../atoms/navigation";
+
 const Cart = () => {
-	return <div></div>;
+	return (
+		<Layout>
+			<Navigation />
+
+			<p>this is cart?</p>
+		</Layout>
+	);
 };
 
 export { Cart };

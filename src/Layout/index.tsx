@@ -1,14 +1,16 @@
 import { ReactNode } from "react";
-import { Navigation } from "../components/navigation";
+import { Navigation } from "../components/atoms/navigation";
 
-
-interface LayoutProps{
-    children?:ReactNode;
+interface LayoutProps {
+	children?: ReactNode;
 }
 
-const Layout = ({children}:LayoutProps) =>{
-    return (
-        <div><Navigation/></div>
-    );
+const Layout = ({ children }: LayoutProps) => {
+	return (
+		<div>
+
+			{children}
+		</div>
+	);
 };
 export default Layout;
