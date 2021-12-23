@@ -7,19 +7,19 @@ import {
 	Navigate,
 } from "react-router-dom";
 import { Cart } from "./components/pages/cart";
-import Layout from "./Layout";
 import {Routes} from "./core/constans/routes";
+import CartProvider from "./core/constans/provider/cartProvider";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Layout>
+		<CartProvider>
 				<Switche>
-					{/* <Route path="*" element={<Navigate replace to={Routes.HomePage.create()} />} /> */}
+					<Route path="*" element={<Navigate  to={Routes.homepage.create()} />} />
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/homepage" element={<HomePage />} />
 				</Switche>
-			</Layout>
+			</CartProvider>
 		</BrowserRouter>
 	);
 }

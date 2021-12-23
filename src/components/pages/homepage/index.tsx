@@ -1,35 +1,42 @@
 import Layout from "../../../Layout";
 import * as data from "../../../core/constans/data";
 import useStyles from "./style";
-import { Navigation } from "../../atoms/navigation";
+import { Text, View } from "reactjs-view";
+import { useCartActions } from "../../../core/constans/provider/cartProvider";
 
 const HomePage = () => {
 	const classes = useStyles();
+	const dispatch=useCartActions();
+	const addProduct=(product:any)=>{
+		//@ts-ignore
+		dispatch({type:"ADD_TO_CART",payload:product});
+	}
 	return (
 		<Layout>
-			<Navigation />
 
-			<main className={classes.container}>
-				<section className={classes.productList}>
-					{data.products.map(({ name, image, price }) => {
+			<View className={classes.container}>
+				<View className={classes.productList}>
+					{data.products.map((product) => {
 						return (
-							<section className={classes.product}>
-								<div>
+							<View className={classes.product}>
+								<View style={{padding:8}}>
 									<img
-										style={{ width: 200, height: "auto" }}
-										src={image}
-										alt={name}
+										style={{ width: 200, height: "auto",borderRadius:"10%" }}
+										src={product?.image}
+										alt={product?.name}
 									/>
-								</div>
-								<div className={classes.content}>
-									<p>{name}</p>
-									<p>$ {price}</p>
-								</div>
-							</section>
+								</View>
+								<View className={classes.content}>
+									<Text>{product?.name}</Text>
+									<Text>$ {product?.price}</Text>
+									<button onClick={()=>addProduct(product)} style={{borderRadius:"4px",width:80,border:"none",cursor:"pointer"}}>Add to cart</button>
+									
+								</View>
+							</View>
 						);
 					})}
-				</section>
-			</main>
+				</View>
+			</View>
 		</Layout>
 	);
 };

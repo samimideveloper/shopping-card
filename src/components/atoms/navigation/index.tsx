@@ -1,28 +1,33 @@
-import { NavLink, useLocation, useMatch } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import useStyles from "./style";
-import { Menu } from "antd";
 import { Routes } from "../../../core/constans/routes";
-import { View } from "reactjs-view";
-import { routes } from "../../routes";
+import { View ,Text} from "reactjs-view";
+import { useState } from "react";
+
+type NavigateActive=
+	"home"|"cart";
+
 
 const Navigation = () => {
 
-
+const navigate=useNavigate();
 	const classes = useStyles();
+	const[active,setActive]=useState<NavigateActive>("cart")
 	return (
 		<View className={classes.mainHeader}>
-			<Menu>
-				<Menu.Item key={1} title="home">
-					<NavLink end to={Routes.homepage.create()}>
+			
+				<View style={{width:80,paddingInline:16}} onPress={()=>setActive("home")}>
+					<Text size={16} style={{backgroundColor:active==="home"?"blue":"transparent"}} onPress={()=>{navigate(Routes.homepage.create());
+					setActive("home")}} >
 						Home
-					</NavLink>
-				</Menu.Item>
-				<Menu.Item key={2} title="cart">
-					<NavLink end to={Routes.cart.create()}>
+					</Text>
+				</View>
+				<View style={{width:80,paddingInline:16}}>
+				<Text style={{backgroundColor:active==="cart"?"blue":"transparent"}}  onPress={()=>{navigate(Routes.cart.create());setActive("cart")}} >
 						Cart
-					</NavLink>
-				</Menu.Item>
-			</Menu>
+					</Text>
+				</View>
+		
 		</View>
 	);
 };

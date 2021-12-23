@@ -1,32 +1,34 @@
 import { createUseStyles } from "react-jss";
+import { generateIndex } from "reactjs-view-core";
+
 
 export default createUseStyles({
 	container: {
-		display: "flex",
+		flexDirection:"row",
 		justifyContent: "center",
 		marginTop: "50px",
 	},
 	productList: {
 		paddingBlock: 20,
-		display: "flex",
-		borderRadius: "10px",
-		flexWrap: "wrap",
-		//  display: "grid",
-		gridTemplateColumns: "repeat (auto-fit,minmax(260px,1fr))",
-		gridColumnGap: "5rem",
-		gridRowGap: "3rem",
-		maxWidth: "1170px",
-		width: "90vw",
+justifyContent:"center",		borderRadius: "10px",
+		flexDirection:"row",
+maxWidth:"100%",
+overflowX:"hidden",
+flexWrap:"wrap",
 	},
 	product: {
 		borderRadius: "10%",
-		display: "flex",
-		flexDirection: "column",
 		backgroundColor: "blueviolet",
+		width:"fit-content",
+		paddingInline:10,
+		marginInline:16,
+		marginBlock:12,
 	},
 	content: {
 		padding: 10,
-        display:"flex",
+		flexDirection:"row",
         justifyContent:"space-between"
 	},
-});
+},
+	{index:generateIndex("pages")},
+);

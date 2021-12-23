@@ -11,6 +11,7 @@ function Router() {
 			<Navigation />
 
 			<Switche>
+				<Route path="*" element={<Navigate to={Routes.homepage.create()}/>} />
 				<Route path={Routes.homepage.template()} element={<HomePage />} />
 				<Route path={Routes.cart.template()} element={<Cart />} />
 			</Switche>
