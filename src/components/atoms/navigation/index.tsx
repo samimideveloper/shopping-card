@@ -12,7 +12,7 @@ const Navigation = () => {
 
 const navigate=useNavigate();
 	const classes = useStyles();
-	const[active,setActive]=useState<NavigateActive>("cart")
+	const[active,setActive]=useState<NavigateActive>("home")
 	return (
 		<View className={classes.mainHeader}>
 			

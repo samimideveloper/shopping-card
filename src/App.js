@@ -6,7 +6,7 @@ import {
 	BrowserRouter,
 	Navigate,
 } from "react-router-dom";
-import { Cart } from "./components/pages/cart";
+import { CartPage } from "./components/pages/cart";
 import {Routes} from "./core/constans/routes";
 import CartProvider from "./core/constans/provider/cartProvider";
 
@@ -16,7 +16,7 @@ function App() {
 		<CartProvider>
 				<Switche>
 					<Route path="*" element={<Navigate  to={Routes.homepage.create()} />} />
-					<Route path="/cart" element={<Cart />} />
+					<Route path="/cart" element={<CartPage />} />
 					<Route path="/homepage" element={<HomePage />} />
 				</Switche>
 			</CartProvider>

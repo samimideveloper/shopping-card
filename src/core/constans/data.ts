@@ -1,5 +1,5 @@
 export const products = [
-	{
+	{id:1,
 		name: "adidas",
 		description: [
 			{ support: "گارانتی دار" },
@@ -12,6 +12,7 @@ export const products = [
 		image: "https://s4.uupload.ir/files/item1_soj.jpg",
 	},
     {
+		id:2,
 		name: "cat",
 		description: [
 			{ support: "گارانتی دار" },
@@ -23,6 +24,7 @@ export const products = [
 		discount: 0,
 		image: "https://s4.uupload.ir/files/item1_soj.jpg",
 	},	{
+		id:3,
 		name: "jagvar",
 		description: [
 			{ support: "گارانتی دار" },
@@ -34,6 +36,7 @@ export const products = [
 		discount: 0,
 		image: "https://s4.uupload.ir/files/item1_soj.jpg",
 	},	{
+		id:4,
 		name: "lacoust",
 		description: [
 			{ support: "گارانتی دار" },
@@ -45,6 +48,7 @@ export const products = [
 		discount: 0,
 		image: "https://s4.uupload.ir/files/item1_soj.jpg",
 	},	{
+		id:5,
 		name: "amiri",
 		description: [
 			{ support: "گارانتی دار" },
@@ -56,6 +60,7 @@ export const products = [
 		discount: 0,
 		image: "https://s4.uupload.ir/files/item1_soj.jpg",
 	},	{
+		id:6,
 		name: "adidas",
 		description: [
 			{ support: "گارانتی دار" },
@@ -67,6 +72,7 @@ export const products = [
 		discount: 0,
 		image: "https://s4.uupload.ir/files/item1_soj.jpg",
 	},	{
+		id:7,
 		name: "zara",
 		description: [
 			{ support: "گارانتی دار" },
@@ -76,8 +82,9 @@ export const products = [
 		price: 120,
 		offprice: 100,
 		discount: 0,
-		image: "https://s4.uupload.ir/files/item1_soj.jpg",
+		image: "https://s4.uupload.ir/files/item3_zvc9.jpg",
 	},	{
+		id:8,
 		name: "guuci",
 		description: [
 			{ support: "گارانتی دار" },
@@ -87,8 +94,9 @@ export const products = [
 		price: 120,
 		offprice: 100,
 		discount: 0,
-		image: "https://s4.uupload.ir/files/item1_soj.jpg",
+		image: "https://s4.uupload.ir/files/item2_fc5s.jpg",
 	},	{
+		id:9,
 		name: "nike",
 		description: [
 			{ support: "گارانتی دار" },

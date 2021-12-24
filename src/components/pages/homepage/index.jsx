@@ -7,9 +7,7 @@ import { useCartActions } from "../../../core/constans/provider/cartProvider";
 const HomePage = () => {
 	const classes = useStyles();
 	const dispatch=useCartActions();
-	const addProduct=(product:any)=>{
-		//@ts-ignore
-		dispatch({type:"ADD_TO_CART",payload:product});
+	const addProduct=(product)=>{	dispatch({type:"ADD_TO_CART",payload:product});
 	}
 	return (
 		<Layout>
@@ -18,7 +16,7 @@ const HomePage = () => {
 				<View className={classes.productList}>
 					{data.products.map((product) => {
 						return (
-							<View className={classes.product}>
+							<View className={classes.product} key={product.id}>
 								<View style={{padding:8}}>
 									<img
 										style={{ width: 200, height: "auto",borderRadius:"10%" }}
