@@ -40,9 +40,7 @@ export default createUseStyles(
 		},
 		activeLink: {
 			colort: "#6d289d",
-			display: "flex",
 			textDecoration: "none",
-			flexDirection: "row",
 			backgroundColor: "#fff",
 		},
 	},

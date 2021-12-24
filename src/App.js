@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { CartPage } from "./components/pages/cart";
 import {Routes} from "./core/constans/routes";
-import CartProvider from "./core/constans/provider/cartProvider";
+import  CartProvider  from "./core/constans/provider/cartProvider";
 
 function App() {
 	return (
@@ -19,7 +19,7 @@ function App() {
 					<Route path="/cart" element={<CartPage />} />
 					<Route path="/homepage" element={<HomePage />} />
 				</Switche>
-			</CartProvider>
+				</CartProvider>
 		</BrowserRouter>
 	);
 }
