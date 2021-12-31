@@ -7,15 +7,14 @@ export default createUseStyles(
 			backgroundColor: "#ede9fe",
 			width: "100%",
 			height: "4.5rem",
-            flexDirection:"row"	,
-			alignItems:"center",
-			justifyContent:"flex-start",
-			top:0,
-			position:"sticky",
-			zIndex:99
-			
-
-},
+			flexDirection: "row",
+			alignItems: "center",
+			// justifyContent: "flex-start",
+			top: 0,
+			position: "sticky",
+			zIndex: 99,
+			textAlign:"center"
+		},
 		ul: {
 			listStyle: "none",
 			display: "flex",
@@ -37,11 +36,18 @@ export default createUseStyles(
 			display: "flex",
 			textDecoration: "none",
 			flexDirection: "row",
+			height: 30,
+			width: 60,
+			textAlign:"center"
 		},
 		activeLink: {
 			colort: "#6d289d",
 			textDecoration: "none",
 			backgroundColor: "#fff",
+			height: 30,
+			width: 60,
+			textAlign:"center"
+
 		},
 	},
 	{

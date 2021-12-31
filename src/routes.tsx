@@ -8,7 +8,7 @@ import { Navigation } from "./components/atoms/navigation";
 function Router() {
 	return (
 		<View>
-			<Navigation />
+			{/* <Navigation /> */}
 			<Switche>
 				<Route path="*" element={<Navigate to={Routes.homepage.create()}/>} />
 				<Route path={Routes.homepage.template()} element={<HomePage />} />

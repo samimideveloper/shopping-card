@@ -9,6 +9,8 @@ import {
 import { CartPage } from "./components/pages/cart";
 import {Routes} from "./core/constans/routes";
 import  CartProvider  from "./core/constans/provider/cartProvider";
+import 'antd/dist/antd.css';
+
 
 function App() {
 	return (
