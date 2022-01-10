@@ -8,8 +8,8 @@ import {
 } from "../../../core/constans/provider/cartProvider";
 import { checkInCart } from "../../../core/constans/utils/chekInCart";
 import { useNavigate } from "react-router-dom";
-import { Routes } from "../../../core/constans/routes";
-import {  notification } from "antd";
+import { Routes } from "../../../core/constans/routes"; 
+import { notification } from "antd";
 
 const HomePage = () => {
 	const navigation = useNavigate();
@@ -44,7 +44,7 @@ const HomePage = () => {
 									<button
 										onClick={() => {
 											addProduct(product);
-											openNotification();
+											// openNotification();
 										}}
 										style={{
 											borderRadius: "4px",
@@ -62,7 +62,7 @@ const HomePage = () => {
 												In cart
 											</Text>
 										) : (
-											"Add to cart"
+											<Text>Add to cart</Text>
 										)}
 									</button>
 								</View>

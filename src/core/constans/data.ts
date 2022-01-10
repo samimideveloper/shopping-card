@@ -81,7 +81,7 @@ export const products = [
 		],
 		price: 120,
 		offprice: 100,
-		discount: 0,
+		discount: 10,
 		image: "https://s4.uupload.ir/files/item3_zvc9.jpg",
 	},	{
 		id:8,
@@ -93,7 +93,7 @@ export const products = [
 		],
 		price: 120,
 		offprice: 100,
-		discount: 0,
+		discount: 10,
 		image: "https://s4.uupload.ir/files/item2_fc5s.jpg",
 	},	{
 		id:9,
