@@ -44,10 +44,10 @@ const removeProductFromCart = (state, payload) => {
 const CartReducer = (state, action) => {
 	switch (action.type) {
 		case "ADD_TO_CART":
-			return addProductToCart(action.payload, state);
+			return addProductToCart(state,action.payload);
 
 		case "REMOVE_PRODUCT":
-			return removeProductFromCart(state.action.payload);
+			return removeProductFromCart(state,action.payload);
 
 		default:
 			return state;

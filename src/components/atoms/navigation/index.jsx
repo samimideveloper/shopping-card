@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import useStyles from "./style";
-import { View, Text } from "reactjs-view";
+import { View } from "reactjs-view";
 import { useCart } from "../../../core/constans/provider/cartProvider";
 import { Routes } from "../../../core/constans/routes";
 import { Badge } from "antd";

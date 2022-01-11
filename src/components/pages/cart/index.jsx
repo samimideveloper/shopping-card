@@ -1,14 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { View, Text } from "reactjs-view";
 import {
 	useCart,
 	useCartActions,
 } from "../../../core/constans/provider/cartProvider";
+import { Routes } from "../../../core/constans/routes";
 import Layout from "../../../Layout";
 
 const CartPage = () => {
 	const { cart, total } = useCart();
 	const dispatch = useCartActions();
-
+const navigate=useNavigate();
 	const AddItemHandler = (cartItem) => {
 		dispatch({ type: "ADD_TO_CART", payload: cartItem });
 	};
@@ -17,9 +19,9 @@ const CartPage = () => {
 	};
 	return (
 		<Layout>
-			<View>
-				{cart.length ? (
-					cart.map((item) => (
+			{cart.length ? (
+				<View style={{ flexDirection: "row" }}>
+					{cart.map((item) => (
 						<View style={{ flexDirection: "row", padding: 46 }}>
 							<View
 								key={item.id}
@@ -72,24 +74,42 @@ const CartPage = () => {
 									remove
 								</button>
 							</View>
-							<View
-								style={{
-									paddingInline: 24,
-									flex: 1,
-									backgroundColor: "#f3f3f3",
-									marginInline:24
-								}}>
-								<h3>summary</h3>
-								<Text key={item.id}>total : ${total}</Text>
-							</View>
 						</View>
-					))
-				) : (
-					<Text>no item in cart</Text>
-				)}
-			</View>
+					))}
+					<View style={{ flex: 1 }}>
+						<Summary total={total} cart={cart} />
+					</View>
+				</View>
+			) : (
+				<Text>cart is empty</Text>
+			)}
 		</Layout>
 	);
 };
 
 export { CartPage };
+
+export const Summary = ({ total,cart }) => {
+	const navigate=useNavigate();
+
+	const originalTotlaPrice = cart.length
+		? cart.reduce((acc, cur) => acc + cur.quantity * cur.price, 0)
+		: 0;
+	return (
+		<View
+			style={{
+				paddingInline: 24,
+				flex: 1,
+				backgroundColor: "#f3f3f3",
+				marginInline: 24,
+			}}>
+			<h3>summary</h3>
+			<View>
+				<Text>total : ${originalTotlaPrice}</Text>
+				<Text>discount : {originalTotlaPrice - total}$ </Text>
+				<Text>net Price : {total}$ </Text>
+			</View>
+			<button onClick={()=> navigate(Routes.checkout.template())}></button>
+		</View>
+	);
+};

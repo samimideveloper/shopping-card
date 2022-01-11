@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Navigation } from "../components/atoms/navigation";
 
 

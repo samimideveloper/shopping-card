@@ -7,21 +7,30 @@ import {
 	Navigate,
 } from "react-router-dom";
 import { CartPage } from "./components/pages/cart";
-import {Routes} from "./core/constans/routes";
-import  CartProvider  from "./core/constans/provider/cartProvider";
-import 'antd/dist/antd.css';
-
+import { CheckOut } from "./components/pages/checkout";
+import { Routes } from "./core/constans/routes";
+import CartProvider from "./core/constans/provider/cartProvider";
+import "antd/dist/antd.css";
+import { Login } from "./components/pages/login/login";
+import { SignUp } from "./components/pages/signup";
 
 function App() {
 	return (
 		<BrowserRouter>
-		<CartProvider>
+			<CartProvider>
 				<Switche>
-					<Route path="*" element={<Navigate  to={Routes.homepage.create()} />} />
+					<Route
+						path="*"
+						element={<Navigate to={Routes.homepage.create()} />}
+					/>
 					<Route path="/cart" element={<CartPage />} />
 					<Route path="/homepage" element={<HomePage />} />
+					<Route path="/checkout" element={<CheckOut  />} />
+					<Route path="/login" element={<Login  />} />
+					<Route path="/signup" element={<SignUp  />} />
+
 				</Switche>
-				</CartProvider>
+			</CartProvider>
 		</BrowserRouter>
 	);
 }
