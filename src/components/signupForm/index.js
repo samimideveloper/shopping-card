@@ -1,7 +1,9 @@
-import { View } from "reactjs-view";
+import { View ,Text} from "reactjs-view";
 import { Input } from "../../common/input";
 import { useFormik } from "formik";
-import * as Yup from "Yup";
+import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { Routes } from "../../core/constans/routes";
 
 const initialValues = {
 	name: "",
@@ -36,6 +38,7 @@ const validationSchema = Yup.object({
 });
 
 const SignUpForm = () => {
+	const navigate=useNavigate();
 	const formik = useFormik({
 		initialValues,
 		onSubmit,
@@ -43,7 +46,7 @@ const SignUpForm = () => {
 		validateOnMount: true,
 	});
 	return (
-		<View>
+		<View style={{width:400,marginInline:"auto",marginBlock:"auto",paddingTop:50}}>
 			<form onSubmit={formik.handleSubmit}>
 				<Input formik={formik} name="name" label="Name" />
 				<Input formik={formik} name="email" label="Email" type="email" />
@@ -65,7 +68,11 @@ const SignUpForm = () => {
 					label="password Confirm"
 					type="password"
 				/>
-				<button type="submit" disabled={!formik.isValid}></button>
+				<View style={{paddingBlock:16}}>
+
+				<button type="submit" disabled={!formik.isValid}>signup</button>
+				</View>
+				<Text onPress={()=>navigate(Routes.login.template())}>Already Login?</Text>
 			</form>
 		</View>
 	);
