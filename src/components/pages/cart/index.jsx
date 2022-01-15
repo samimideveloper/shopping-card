@@ -85,7 +85,16 @@ const CartPage = () => {
           </View>
         </View>
       ) : (
-        <Text>cart is empty</Text>
+        <View
+          style={{
+            marginInline: "auto",
+            paddingTop: 80,
+          }}
+        >
+          <Text theme="bold" size="xxlarge">
+            cart is empty
+          </Text>
+        </View>
       )}
     </Layout>
   );
