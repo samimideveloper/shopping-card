@@ -89,11 +89,15 @@ const CartPage = () => {
           style={{
             marginInline: "auto",
             paddingTop: 80,
+            flexDirection: "row",
           }}
         >
           <Text theme="bold" size="xxlarge">
             cart is empty
           </Text>
+          <button onClick={() => navigate(Routes.homepage.create())}>
+            GO to Shop
+          </button>
         </View>
       )}
     </Layout>
