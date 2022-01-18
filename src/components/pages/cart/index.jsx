@@ -92,10 +92,10 @@ const CartPage = () => {
             flexDirection: "row",
           }}
         >
-          <Text theme="bold" size="xxlarge">
+          <Text style={{paddingInline:16}} theme="bold" size="xxlarge">
             cart is empty
           </Text>
-          <button onClick={() => navigate(Routes.homepage.create())}>
+          <button style={{border:"none"}} onClick={() => navigate(Routes.homepage.create())}>
             GO to Shop
           </button>
         </View>
