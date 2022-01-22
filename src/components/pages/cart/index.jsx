@@ -6,6 +6,7 @@ import {
 } from "../../../core/constans/provider/cartProvider";
 import { Routes } from "../../../core/constans/routes";
 import Layout from "../../../Layout";
+import useStyles from "./style";
 
 const CartPage = () => {
 	const { cart, total } = useCart();
@@ -17,22 +18,13 @@ const CartPage = () => {
 	const RemoveHandler = (cartItem) => {
 		dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
 	};
+	const classes = useStyles();
 	return (
 		<Layout>
 			{cart.length ? (
-				<View style={{ flexDirection: "row",overflowX:"hidden"}}>
+				<View className={classes.mainHeader}>
 					{cart.map((item) => (
-						<View
-							key={item.id}
-							style={{
-								padding: [16, 16],
-								backgroundColor: "#f3f3f3",
-								alignItems: "center",
-								justifyContent: "space-between",
-								width: 300,
-								flexDirection: "row"
-                ,flexWrap:"wrap" 
-							}}>
+						<View key={item.id} className={classes.header}>
 							<img
 								style={{ width: 100, height: "auto", borderRadius: "10%" }}
 								src={item.image}
