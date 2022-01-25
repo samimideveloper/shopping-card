@@ -19,11 +19,7 @@ const HomePage = () => {
   const addProduct = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
-  const openNotification = (product) => {
-    notification.open({
-      message: `${product} ${"به سبد خرید اضافه شد"}`,
-    });
-  };
+
   return (
     <Layout>
       <View className={classes.container}>
@@ -44,7 +40,6 @@ const HomePage = () => {
                   <button
                     onClick={() => {
                       addProduct(product);
-                      // openNotification();
                     }}
                     style={{
                       borderRadius: "4px",
