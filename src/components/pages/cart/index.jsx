@@ -119,9 +119,9 @@ export const Summary = ({ total, cart }) => {
     >
       <h3>summary</h3>
       <View>
-        <Text>total : ${originalTotlaPrice}</Text>
-        <Text>discount : {originalTotlaPrice - total}$ </Text>
-        <Text>net Price : {total}$ </Text>
+        <Text>کل : ${originalTotlaPrice}</Text>
+        <Text>تخفیف : {originalTotlaPrice - total}$ </Text>
+        <Text>قیمت نهایی : {total}$ </Text>
       </View>
       <button onClick={() => navigate(Routes.checkout.template())}></button>
     </View>
