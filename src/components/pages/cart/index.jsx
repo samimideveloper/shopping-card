@@ -42,7 +42,7 @@ const CartPage = () => {
                   }}
                   onClick={() => AddItemHandler(item)}
                 >
-                  ADD
+                  افزودن
                 </button>
                 <button
                   style={{
@@ -66,7 +66,7 @@ const CartPage = () => {
                   }}
                   onClick={() => RemoveHandler(item)}
                 >
-                  remove
+                  حذف
                 </button>
               </View>
             ))}
@@ -84,13 +84,13 @@ const CartPage = () => {
           }}
         >
           <Text style={{ paddingInline: 16 }} theme="bold" size="xxlarge">
-            cart is empty
+            هیچی نخریدی
           </Text>
           <button
             style={{ border: "none", cursor: "pointer" }}
             onClick={() => navigate(Routes.homepage.create())}
           >
-            GO to Shop
+            میرم فروشگاه
           </button>
         </View>
       )}
@@ -117,7 +117,7 @@ export const Summary = ({ total, cart }) => {
         height: 200,
       }}
     >
-      <h3>summary</h3>
+      <h3>مجموع</h3>
       <View>
         <Text>کل : ${originalTotlaPrice}</Text>
         <Text>تخفیف : {originalTotlaPrice - total}$ </Text>
