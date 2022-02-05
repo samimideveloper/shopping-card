@@ -57,13 +57,7 @@ const CartPage = () => {
                   {item.quantity}
                 </button>
                 <button
-                  style={{
-                    borderRadius: "4px",
-                    width: 80,
-                    border: "none",
-                    cursor: "pointer",
-                    height: 30,
-                  }}
+                  className={classes.button}
                   onClick={() => RemoveHandler(item)}
                 >
                   حذف

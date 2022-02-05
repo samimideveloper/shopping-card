@@ -17,6 +17,13 @@ export default createUseStyles(
       marginBlock: 16,
       marginInline: 16,
     },
+    button: {
+      borderRadius: "4px",
+      width: 80,
+      border: "none",
+      cursor: "pointer",
+      height: 30,
+    },
   },
   {
     index: generateIndex("pages"),
