@@ -41,12 +41,7 @@ const HomePage = () => {
                     onClick={() => {
                       addProduct(product);
                     }}
-                    style={{
-                      borderRadius: "4px",
-                      width: 80,
-                      border: "none",
-                      cursor: "pointer",
-                    }}
+                    className={classes.productButton}
                   >
                     {checkInCart(cart, product) ? (
                       <Text

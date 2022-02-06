@@ -30,6 +30,12 @@ export default createUseStyles(
       flexDirection: "row",
       justifyContent: "space-between",
     },
+    productButton: {
+      borderRadius: "4px",
+      width: 80,
+      border: "none",
+      cursor: "pointer",
+    },
   },
   { index: generateIndex("pages") }
 );
