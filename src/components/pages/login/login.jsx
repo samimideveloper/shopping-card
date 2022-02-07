@@ -45,7 +45,7 @@ const Login = () => {
 
         <View style={{ paddingBlock: 16 }}>
           <button type="submit" disabled={!formik.isValid}>
-            login
+            ورود
           </button>
         </View>
       </form>
