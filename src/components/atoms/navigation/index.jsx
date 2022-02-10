@@ -22,7 +22,7 @@ const Navigation = () => {
           }
           to={Routes.cart.create()}
         >
-          <Text size="large">کارت</Text>
+          <Text size="large">Cart</Text>
         </NavLink>
       </View>
     </View>
