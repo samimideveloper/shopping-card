@@ -73,15 +73,16 @@ const CartPage = () => {
         <View
           style={{
             marginInline: "auto",
-            paddingTop: 80,
+            marginBlock: 200,
             flexDirection: "row",
+            justifyContent: "center",
           }}
         >
           <Text style={{ paddingInline: 16 }} theme="bold" size="xxlarge">
             هیچی نخریدی
           </Text>
           <button
-            style={{ border: "none", cursor: "pointer" }}
+            style={{ border: "none", cursor: "pointer", width: 100 }}
             onClick={() => navigate(Routes.homepage.create())}
           >
             میرم فروشگاه
