@@ -51,10 +51,10 @@ const HomePage = () => {
                           navigation(Routes.cart.create());
                         }}
                       >
-                        In cart
+                        برو به فروشگاه
                       </Text>
                     ) : (
-                      <Text>Add to cart</Text>
+                      <Text>اضافه کردن به سبد خرید</Text>
                     )}
                   </button>
                 </View>
