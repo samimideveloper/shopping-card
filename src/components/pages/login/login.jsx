@@ -2,6 +2,7 @@ import { View } from "reactjs-view";
 import { Input } from "../../../common/input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import useStyles from "./style";
 
 const initialValues = {
   email: "",
@@ -24,15 +25,9 @@ const Login = () => {
     validationSchema,
     validateOnMount: true,
   });
+  const classes = useStyles();
   return (
-    <View
-      style={{
-        width: 400,
-        marginInline: "auto",
-        marginBlock: "auto",
-        paddingTop: 50,
-      }}
-    >
+    <View className={classes.main}>
       <form onSubmit={formik.handleSubmit}>
         <Input formik={formik} name="email" label="Email" type="email" />
 
