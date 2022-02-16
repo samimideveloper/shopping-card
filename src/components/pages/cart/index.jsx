@@ -33,29 +33,12 @@ const CartPage = () => {
                 />
                 <Text>{item.name}</Text>
                 <button
-                  style={{
-                    borderRadius: "4px",
-                    width: 80,
-                    border: "none",
-                    cursor: "pointer",
-                    height: 30,
-                  }}
+                  className={classes.add}
                   onClick={() => AddItemHandler(item)}
                 >
                   افزودن
                 </button>
-                <button
-                  style={{
-                    borderRadius: "4px",
-                    width: 80,
-                    border: "none",
-                    cursor: "pointer",
-                    height: 30,
-                    marginInline: 8,
-                  }}
-                >
-                  {item.quantity}
-                </button>
+                <button className={classes.quantity}>{item.quantity}</button>
                 <button
                   className={classes.button}
                   onClick={() => RemoveHandler(item)}
@@ -70,14 +53,7 @@ const CartPage = () => {
           </View>
         </View>
       ) : (
-        <View
-          style={{
-            marginInline: "auto",
-            marginBlock: 200,
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
+        <View className={classes.contentWrapper}>
           <Text style={{ paddingInline: 16 }} theme="bold" size="xxlarge">
             هیچی نخریدی
           </Text>

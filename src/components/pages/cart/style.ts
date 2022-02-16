@@ -24,6 +24,27 @@ export default createUseStyles(
       cursor: "pointer",
       height: 30,
     },
+    contentWrapper: {
+      marginInline: "auto",
+      marginBlock: 200,
+      flexDirection: "row",
+      justifyContent: "center",
+    },
+    quantity: {
+      borderRadius: "4px",
+      width: 80,
+      border: "none",
+      cursor: "pointer",
+      height: 30,
+      marginInline: 8,
+    },
+    add: {
+      borderRadius: "4px",
+      width: 80,
+      border: "none",
+      cursor: "pointer",
+      height: 30,
+    },
   },
   {
     index: generateIndex("pages"),
