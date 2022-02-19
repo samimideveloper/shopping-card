@@ -1,10 +1,10 @@
-import {View} from "reactjs-view"
+import { View, Text } from "reactjs-view";
 
-
-
-const CheckOut=()=>{
-    return (<View>
-checkout page
-    </View>)
-}
-export {CheckOut}
+const CheckOut = () => {
+  return (
+    <View>
+      <Text>checkout page</Text>
+    </View>
+  );
+};
+export { CheckOut };
