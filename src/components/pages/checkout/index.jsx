@@ -3,7 +3,7 @@ import { View, Text } from "reactjs-view";
 const CheckOut = () => {
   return (
     <View>
-      <Text>صفحه پرداخت</Text>
+      <Text theme="bold">صفحه پرداخت</Text>
     </View>
   );
 };

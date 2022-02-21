@@ -54,7 +54,9 @@ const HomePage = () => {
                         برو به فروشگاه
                       </Text>
                     ) : (
-                      <Text>اضافه کردن به سبد خرید</Text>
+                      <Text theme="bold" size={14}>
+                        اضافه کردن به سبد خرید
+                      </Text>
                     )}
                   </button>
                 </View>
