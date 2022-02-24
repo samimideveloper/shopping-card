@@ -4,10 +4,10 @@ import { generateIndex } from "reactjs-view-core";
 export default createUseStyles(
   {
     main: {
-      width: 400,
       marginInline: "auto",
-      marginBlock: "auto",
-      paddingTop: 50,
+      justifyContent: "center",
+      alignItems: "center",
+      height: "600px",
     },
   },
   { index: generateIndex("pages") }

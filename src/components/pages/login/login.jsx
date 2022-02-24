@@ -28,15 +28,19 @@ const Login = () => {
   const classes = useStyles();
   return (
     <View className={classes.main}>
-      <form onSubmit={formik.handleSubmit}>
-        <Input formik={formik} name="email" label="Email" type="email" />
+      <form onSubmit={formik.handleSubmit} style={{ width: 300 }}>
+        <View>
+          <Input formik={formik} name="email" label="Email" type="email" />
+        </View>
 
-        <Input
-          formik={formik}
-          name="password"
-          label="password"
-          type="password"
-        />
+        <View>
+          <Input
+            formik={formik}
+            name="password"
+            label="password"
+            type="password"
+          />
+        </View>
 
         <View style={{ paddingBlock: 16 }}>
           <button type="submit" disabled={!formik.isValid}>
