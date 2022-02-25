@@ -72,11 +72,11 @@ const SignUpForm = () => {
         />
         <View style={{ paddingBlock: 16 }}>
           <button type="submit" disabled={!formik.isValid}>
-            signup
+            ثبت نام
           </button>
         </View>
         <Text onPress={() => navigate(Routes.login.template())}>
-          Already Login?
+          قبلا ثبت نام کرده اید؟
         </Text>
       </form>
     </View>
