@@ -10,5 +10,5 @@ export default createUseStyles(
       paddingTop: 50,
     },
   },
-  { index: generateIndex("templates") }
+  { index: generateIndex("pages") }
 );
