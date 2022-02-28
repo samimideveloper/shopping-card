@@ -19,10 +19,7 @@ function App() {
     <BrowserRouter>
       <CartProvider>
         <Switche>
-          <Route
-            path="*"
-            element={<Navigate to={Routes.homepage.create()} />}
-          />
+          <Route path="*" element={<Navigate to={Routes.login.create()} />} />
           <Route path={Routes.cart.template()} element={<CartPage />} />
           <Route path={Routes.homepage.template()} element={<HomePage />} />
           <Route path={Routes.checkout.template()} element={<CheckOut />} />
