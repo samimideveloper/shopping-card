@@ -26,11 +26,7 @@ const CartPage = () => {
           <View className={classes.mainHeader}>
             {cart.map((item) => (
               <View key={item.id} className={classes.header}>
-                <img
-                  style={{ width: 100, height: "auto", borderRadius: "10%" }}
-                  src={item.image}
-                  alt={item.name}
-                />
+                <img className={classes.img} src={item.image} alt={item.name} />
                 <Text>{item.name}</Text>
                 <button
                   className={classes.add}

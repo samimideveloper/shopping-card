@@ -45,6 +45,7 @@ export default createUseStyles(
       cursor: "pointer",
       height: 30,
     },
+    img: { width: 100, height: "auto", borderRadius: "10%" },
   },
   {
     index: generateIndex("pages"),
