@@ -22,7 +22,7 @@ const CartPage = () => {
   return (
     <Layout>
       {cart.length ? (
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <View className={classes.main}>
           <View className={classes.mainHeader}>
             {cart.map((item) => (
               <View key={item.id} className={classes.header}>

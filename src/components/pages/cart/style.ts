@@ -3,6 +3,7 @@ import { generateIndex } from "reactjs-view-core";
 
 export default createUseStyles(
   {
+    main: { flexDirection: "row", justifyContent: "space-between" },
     mainHeader: {
       overflowX: "hidden",
     },
