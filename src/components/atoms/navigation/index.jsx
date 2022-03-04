@@ -14,7 +14,9 @@ const Navigation = () => {
           }
           to={Routes.homepage.create()}
         >
-          <Text size="large">Home</Text>
+          <Text theme="bold-en" size="large">
+            Home
+          </Text>
         </NavLink>
       </View>
       <View style={{ width: 80 }}>
@@ -24,7 +26,7 @@ const Navigation = () => {
           }
           to={Routes.cart.create()}
         >
-          <Text style={{}} size="large">
+          <Text theme="bold-en" style={{}} size="large">
             Cart
           </Text>
         </NavLink>
