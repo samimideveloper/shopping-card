@@ -14,7 +14,7 @@ const Navigation = () => {
           }
           to={Routes.homepage.create()}
         >
-          <Text theme="bold-en" size="large">
+          <Text color="blue" theme="bold-en" size="large">
             Home
           </Text>
         </NavLink>
