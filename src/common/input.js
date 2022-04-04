@@ -1,8 +1,8 @@
-import { View } from "reactjs-view";
+import { View, Text } from "reactjs-view";
 const Input = ({ label, name, formik, type = "text" }) => {
   return (
     <View>
-      <label htmlFor={name}>{label}</label>
+      <Text htmlFor={name}>{label}</Text>
       <input
         id={name}
         type={type}
