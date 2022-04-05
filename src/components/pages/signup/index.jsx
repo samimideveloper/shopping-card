@@ -1,5 +1,5 @@
 import { View } from "reactjs-view";
-import { SignUpForm } from "../../signupForm";
+import { SignUpForm } from "../../atoms/navigation/signupForm";
 
 const SignUp = () => {
   return (
