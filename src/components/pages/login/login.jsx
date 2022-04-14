@@ -3,13 +3,15 @@ import { Input } from "../../../common/input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import useStyles from "./style";
+import { useState } from "react";
+import { LoginUser } from "../../../services/loginService";
+import { Text } from "reactjs-view";
+import { useNavigate } from "react-router-dom";
+import { Routes } from "../../../core/constans/routes";
 
 const initialValues = {
   email: "",
   password: "",
-};
-const onSubmit = (values) => {
-  console.log(values);
 };
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -19,6 +21,19 @@ const validationSchema = Yup.object({
 });
 
 const Login = () => {
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const onSubmit = async (values) => {
+    try {
+      const { data } = await LoginUser(values);
+      setError(null);
+      navigate(Routes.homepage.template());
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        setError(error.message);
+      }
+    }
+  };
   const formik = useFormik({
     initialValues,
     onSubmit,
@@ -46,6 +61,12 @@ const Login = () => {
           <button type="submit" disabled={!formik.isValid}>
             ورود
           </button>
+          {error && (
+            <Text size={14} color="red">
+              {" "}
+              {error}
+            </Text>
+          )}
         </View>
       </form>
     </View>

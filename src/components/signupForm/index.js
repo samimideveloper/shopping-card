@@ -2,9 +2,11 @@ import { View, Text } from "reactjs-view";
 import { Input } from "../../common/input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, withRouter } from "react-router-dom";
 import { Routes } from "../../core/constans/routes";
 import useStyle from "./style";
+import { SignUpUser } from "../../services/signUpService";
+import { useState } from "react";
 
 const initialValues = {
   name: "",
@@ -13,9 +15,7 @@ const initialValues = {
   password: "",
   passwordConfirm: "",
 };
-const onSubmit = (values) => {
-  console.log(values);
-};
+
 const validationSchema = Yup.object({
   name: Yup.string()
     .required("Name is Required")
@@ -27,20 +27,40 @@ const validationSchema = Yup.object({
     .required("phoneNumber is Required")
     .matches(/^[0-9]{11}$/, "invalid Phone number")
     .nullable(),
-  password: Yup.string()
-    .required("password is Required")
-    .matches(
-      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-      "Must contain 8 character"
-    ),
+  password: Yup.string().required("password is Required"),
+  // .matches(
+  //   /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+  //   "Must contain 8 character"
+  // )
   passwordConfirm: Yup.string()
     .required("pasword confirm is required")
     .oneOf([Yup.ref("password"), null], "password must match"),
 });
 
-const SignUpForm = () => {
+const SignUpForm = (props) => {
+  console.log(props);
   const classes = useStyle();
   const navigate = useNavigate();
+  const [error, seterror] = useState(null);
+  const onSubmit = async (values) => {
+    const { name, email, phoneNumber, password } = values;
+
+    const userData = {
+      name: name,
+      email: email,
+      phoneNumber: phoneNumber,
+      password: password,
+    };
+    try {
+      const { data } = await SignUpUser(userData);
+      navigate(Routes.homepage.template());
+    } catch (error) {
+      console.log(error);
+      if (error.response && error.response.data.message) {
+        seterror(error.response.data.message);
+      }
+    }
+  };
   const formik = useFormik({
     initialValues,
     onSubmit,
@@ -74,10 +94,15 @@ const SignUpForm = () => {
           <button type="submit" disabled={!formik.isValid}>
             ثبت نام
           </button>
+          {error && (
+            <Text style={{ marginBlock: 8 }} size={16} color="red">
+              {error}
+            </Text>
+          )}
         </View>
-        <Text onPress={() => navigate(Routes.login.template())}>
+        <button onClick={() => navigate(Routes.login.template())}>
           قبلا ثبت نام کرده اید؟
-        </Text>
+        </button>
       </form>
     </View>
   );

@@ -31,6 +31,18 @@ const Navigation = () => {
           </Text>
         </NavLink>
       </View>
+      <View style={{ width: 80 }}>
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? classes.activeLink : classes.navlink
+          }
+          to={Routes.login.create()}
+        >
+          <Text theme="bold-en" style={{}} size="large">
+            login / signUp
+          </Text>
+        </NavLink>
+      </View>
     </View>
   );
 };
