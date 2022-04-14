@@ -1,9 +1,9 @@
 import { View, Text } from "reactjs-view";
-import { Input } from "../../common/input";
+import { Input } from "../../../../common/input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useNavigate, withRouter } from "react-router-dom";
-import { Routes } from "../../core/constans/routes";
+import { useNavigate } from "react-router-dom";
+import { Routes } from "../../../../core/constans/routes";
 import useStyle from "./style";
 import { SignUpUser } from "../../services/signUpService";
 import { useState } from "react";

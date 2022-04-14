@@ -29,7 +29,7 @@ export const products = [
     id: 3,
     name: "jagvar",
     description: [
-      { support: "گارانتی دار" },
+      { support: "گارانتی ندارد " },
       { support: "ارسال رایگان" },
       { support: "اصل" },
     ],
