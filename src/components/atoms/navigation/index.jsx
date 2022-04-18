@@ -14,7 +14,7 @@ const Navigation = () => {
           }
           to={Routes.homepage.create()}
         >
-          <Text color="blue" theme="bold-en" size="large">
+          <Text color="blue" theme="bold-en" size={16}>
             Home
           </Text>
         </NavLink>
@@ -38,7 +38,7 @@ const Navigation = () => {
           }
           to={Routes.login.create()}
         >
-          <Text theme="bold-en" style={{}} size="large">
+          <Text theme="bold-en" style={{}} size={16}>
             login / signUp
           </Text>
         </NavLink>
