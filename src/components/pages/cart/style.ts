@@ -14,7 +14,6 @@ export default createUseStyles(
       justifyContent: "space-between",
       width: 600,
       flexDirection: "row",
-
       marginBlock: 16,
       marginInline: 16,
     },

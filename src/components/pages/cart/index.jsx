@@ -84,7 +84,9 @@ export const Summary = ({ total, cart }) => {
         height: 200,
       }}
     >
-      <h3>مجموع</h3>
+      <Text size={26} theme="bold">
+        مجموع
+      </Text>
       <View>
         <Text>کل : ${originalTotlaPrice}</Text>
         <Text>تخفیف : {originalTotlaPrice - total}$ </Text>
