@@ -26,6 +26,7 @@ const Login = () => {
   const onSubmit = async (values) => {
     try {
       const { data } = await LoginUser(values);
+      console.log(data);
       setError(null);
       navigate(Routes.homepage.template());
     } catch (error) {
