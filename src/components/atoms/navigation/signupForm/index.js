@@ -5,8 +5,8 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { Routes } from "../../../../core/constans/routes";
 import useStyle from "./style";
-import { SignUpUser } from "../../services/signUpService";
 import { useState } from "react";
+import { SignUpUser } from "../../../../services/signUpService";
 
 const initialValues = {
   name: "",

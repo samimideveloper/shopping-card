@@ -26,7 +26,7 @@ const Navigation = () => {
           }
           to={Routes.cart.create()}
         >
-          <Text theme="bold-en" style={{}} size="large">
+          <Text theme="bold-en" size="large">
             Cart
           </Text>
         </NavLink>
@@ -38,7 +38,7 @@ const Navigation = () => {
           }
           to={Routes.login.create()}
         >
-          <Text theme="bold-en" style={{}} size={16}>
+          <Text theme="bold-en" size={16}>
             login / signUp
           </Text>
         </NavLink>
