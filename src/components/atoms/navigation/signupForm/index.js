@@ -38,7 +38,6 @@ const validationSchema = Yup.object({
 });
 
 const SignUpForm = (props) => {
-  console.log(props);
   const classes = useStyle();
   const navigate = useNavigate();
   const [error, seterror] = useState(null);
@@ -51,6 +50,7 @@ const SignUpForm = (props) => {
       phoneNumber: phoneNumber,
       password: password,
     };
+
     try {
       const { data } = await SignUpUser(userData);
       navigate(Routes.homepage.template());
