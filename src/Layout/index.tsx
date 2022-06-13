@@ -1,7 +1,12 @@
 import { Navigation } from "../components/atoms/navigation";
 import { View } from "reactjs-view";
+import { ReactNode } from "react";
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <View>
       <Navigation />

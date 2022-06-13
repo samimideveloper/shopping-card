@@ -37,11 +37,16 @@ const validationSchema = Yup.object({
     .oneOf([Yup.ref("password"), null], "password must match"),
 });
 
-const SignUpForm = (props) => {
+const SignUpForm = () => {
   const classes = useStyle();
   const navigate = useNavigate();
   const [error, seterror] = useState(null);
-  const onSubmit = async (values) => {
+  const onSubmit = async (values: {
+    name: string;
+    email: string;
+    phoneNumber: number;
+    password: string | number;
+  }) => {
     const { name, email, phoneNumber, password } = values;
 
     const userData = {
@@ -56,8 +61,8 @@ const SignUpForm = (props) => {
       navigate(Routes.homepage.template());
     } catch (error) {
       console.log(error);
-      if (error.response && error.response.data.message) {
-        seterror(error.response.data.message);
+      if (error?.response && error?.response.data.message) {
+        seterror(error?.response.data.message);
       }
     }
   };

@@ -1,4 +1,7 @@
-const addProductToCart = (state, payload) => {
+const addProductToCart = (
+  state: { cart: any; total: any },
+  payload: { id: any; offprice: any }
+) => {
   const updatedCart = [...state.cart];
   const updateItemIndex = updatedCart.findIndex(
     (item) => item.id === payload.id
@@ -17,7 +20,10 @@ const addProductToCart = (state, payload) => {
   };
 };
 
-const removeProductFromCart = (state, payload) => {
+const removeProductFromCart = (
+  state: { cart: any; total: number },
+  payload: { id: any; offprice: number }
+) => {
   const updatedCart = [...state.cart];
   const updateItemIndex = updatedCart.findIndex(
     (item) => item.id === payload.id
@@ -41,7 +47,10 @@ const removeProductFromCart = (state, payload) => {
   }
 };
 
-const CartReducer = (state, action) => {
+const CartReducer = (
+  state: { cart: any; total: number },
+  action: { type: any; payload: { id: any; offprice: number } }
+) => {
   switch (action.type) {
     case "ADD_TO_CART":
       return addProductToCart(state, action.payload);

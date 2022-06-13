@@ -24,7 +24,7 @@ const CartPage = () => {
       {cart.length ? (
         <View className={classes.main}>
           <View className={classes.mainHeader}>
-            {cart.map((item) => (
+            {cart?.map((item) => (
               <View key={item.id} className={classes.header}>
                 <img className={classes.img} src={item.image} alt={item.name} />
                 <Text>{item.name}</Text>
