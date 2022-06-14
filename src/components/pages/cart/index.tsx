@@ -12,10 +12,10 @@ const CartPage = () => {
   const { cart, total } = useCart();
   const dispatch = useCartActions();
   const navigate = useNavigate();
-  const AddItemHandler = (cartItem) => {
+  const AddItemHandler = (cartItem: any) => {
     dispatch({ type: "ADD_TO_CART", payload: cartItem });
   };
-  const RemoveHandler = (cartItem) => {
+  const RemoveHandler = (cartItem: any) => {
     dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
   };
   const classes = useStyles();
@@ -71,7 +71,11 @@ export const Summary = ({ total, cart }) => {
   const navigate = useNavigate();
 
   const originalTotlaPrice = cart.length
-    ? cart.reduce((acc, cur) => acc + cur.quantity * cur.price, 0)
+    ? cart.reduce(
+        (acc: number, cur: { quantity: number; price: number }) =>
+          acc + cur.quantity * cur.price,
+        0
+      )
     : 0;
   return (
     <View

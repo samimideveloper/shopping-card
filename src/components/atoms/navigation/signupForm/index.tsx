@@ -7,6 +7,7 @@ import { Routes } from "../../../../core/constans/routes";
 import useStyle from "./style";
 import { useState } from "react";
 import { SignUpUser } from "../../../../services/signUpService";
+import { SignUpFormContext } from "./type";
 
 const initialValues = {
   name: "",
@@ -72,6 +73,8 @@ const SignUpForm = () => {
     validationSchema,
     validateOnMount: true,
   });
+
+  const {} = SignUpFormContext.useFormContext();
   return (
     <View className={classes.main}>
       <form onSubmit={formik.handleSubmit}>
