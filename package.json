@@ -32,7 +32,26 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile": "rimraf \"**/tsconfig.tsbuildinfo\" && tsc -b"
+    "compile": "rimraf \"**/tsconfig.tsbuildinfo\" && tsc -b",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-webpack-plugin": "^3.1.1",
+    "prettier": "^2.3.2",
+    "prettier-plugin-jsdoc": "^0.3.38",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "react-app-rewired": "^2.1.8",
+    "reactjs-view-tests": "^1.0.10",
+    "swagger-typescript": "^6.0.10",
+    "less": "^4.1.2",
+    "less-loader": "^7.3.0",
+    "rimraf": "^3.0.2"
   },
   "eslintConfig": {
     "extends": [
