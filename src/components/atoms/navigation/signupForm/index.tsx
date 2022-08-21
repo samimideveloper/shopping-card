@@ -1,13 +1,12 @@
-import { View, Text } from "reactjs-view";
-import { Input } from "../../../../common/input";
 import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
-import { Routes } from "../../../../core/constans/routes";
-import useStyle from "./style";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Text, View } from "reactjs-view";
+import * as Yup from "yup";
+import { Input } from "../../../../common/input";
+import { Routes } from "../../../../core/constans/routes";
 import { SignUpUser } from "../../../../services/signUpService";
-import { SignUpFormContext } from "./type";
+import useStyle from "./style";
 
 const initialValues = {
   name: "",
@@ -74,7 +73,6 @@ const SignUpForm = () => {
     validateOnMount: true,
   });
 
-  const {} = SignUpFormContext.useFormContext();
   return (
     <View className={classes.main}>
       <form onSubmit={formik.handleSubmit}>
